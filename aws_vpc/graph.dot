@@ -2,20 +2,17 @@ digraph {
 	compound = "true"
 	newrank = "true"
 	subgraph "root" {
-		"[root] aws_subnet.ltthw-vpc-subnet (expand)" [label = "aws_subnet.ltthw-vpc-subnet", shape = "box"]
-		"[root] aws_vpc.ltthw-vpc (expand)" [label = "aws_vpc.ltthw-vpc", shape = "box"]
+		"[root] aws_subnet.my-vpc-subnet (expand)" [label = "aws_subnet.my-vpc-subnet", shape = "box"]
+		"[root] aws_vpc.my-vpc (expand)" [label = "aws_vpc.my-vpc", shape = "box"]
 		"[root] local_file.local-file (expand)" [label = "local_file.local-file", shape = "box"]
 		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
 		"[root] provider[\"registry.terraform.io/hashicorp/local\"]" [label = "provider[\"registry.terraform.io/hashicorp/local\"]", shape = "diamond"]
-		"[root] aws_subnet.ltthw-vpc-subnet (expand)" -> "[root] aws_vpc.ltthw-vpc (expand)"
-		"[root] aws_vpc.ltthw-vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
-		"[root] local_file.local-file (expand)" -> "[root] aws_vpc.ltthw-vpc (expand)"
+		"[root] aws_subnet.my-vpc-subnet (expand)" -> "[root] aws_vpc.my-vpc (expand)"
+		"[root] aws_vpc.my-vpc (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] local_file.local-file (expand)" -> "[root] aws_vpc.my-vpc (expand)"
 		"[root] local_file.local-file (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"]"
-		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_subnet.ltthw-vpc-subnet (expand)"
-		"[root] meta.count-boundary (EachMode fixup)" -> "[root] local_file.local-file (expand)"
-		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.ltthw-vpc-subnet (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.my-vpc-subnet (expand)"
 		"[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)" -> "[root] local_file.local-file (expand)"
-		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
 		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/local\"] (close)"
 	}
